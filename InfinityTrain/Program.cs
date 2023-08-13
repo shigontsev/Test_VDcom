@@ -20,10 +20,17 @@ internal class Program
         list.Add(new Wagon(true));//11
         list.Add(new Wagon(true));//12
 
-        var train = new Train(list, 3);
+        var train = new Train(list);
 
         var r = new Researcher(train);
 
+        r.Notify += Print;
+
         r.Start();
+    }
+
+    public static void Print(string str)
+    { 
+        System.Console.WriteLine(str); 
     }
 }

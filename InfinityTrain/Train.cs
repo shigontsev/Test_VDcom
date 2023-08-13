@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,6 +61,20 @@ namespace InfinityTrain
 
         public bool IsCountCorrect(int calc_count) {
             return calc_count == list.Count;
+        }
+
+        //public void Show()
+        //{
+        //    Console.WriteLine(new String('-', list.Count - (list.Count - _position)) + "@" + new String('-', list.Count - _position - 1));
+        //    Console.WriteLine(string.Join("", list.Select(x => x.ToString())));
+        //}
+
+        //Сделал только для отображение позиции
+        public string GetMapPosition()
+        {
+            return string.Format(new String('-', list.Count - (list.Count - _position)) + "@" + new String('-', list.Count - _position - 1) +
+                Environment.NewLine +
+                string.Join("", list.Select(x => x.ToString())));            
         }
     }
 }

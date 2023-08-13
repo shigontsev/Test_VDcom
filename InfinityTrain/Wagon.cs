@@ -22,5 +22,10 @@ namespace InfinityTrain
         {
             Light = Light == true? false : true; 
         }
+
+        public override string ToString()
+        {
+            return Light == true ? "1" : "0";
+        }
     }
 }
