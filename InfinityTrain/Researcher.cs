@@ -30,7 +30,9 @@ namespace InfinityTrain
             }
             int it = 0;
 
+            Notify?.Invoke(GetMapPosition());
             Notify?.Invoke(Poezd.GetMapPosition());
+            
             //Poezd.Show();
             do
             {
@@ -51,6 +53,7 @@ namespace InfinityTrain
                 _count_tmp = _calc_count;
 
                 //Poezd.Show();
+                Notify?.Invoke(GetMapPosition());
                 Notify?.Invoke(Poezd.GetMapPosition());
                 do
                 {
@@ -59,11 +62,17 @@ namespace InfinityTrain
                 } while (_count_tmp != 0);
 
                 //Poezd.Show();
+                Notify?.Invoke(GetMapPosition());
                 Notify?.Invoke(Poezd.GetMapPosition());
             } while (Poezd.Current.Light);
 
             Console.WriteLine($"Подсчитано количество вагонов = {_calc_count}, Соответствует действительности? {Poezd.IsCountCorrect(_calc_count)}");
 
+        }
+
+        public string GetMapPosition()
+        {
+            return string.Format(new String('-', _calc_count - (_calc_count - _count_tmp)) + "@");
         }
     }
 }

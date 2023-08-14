@@ -6,21 +6,23 @@ internal class Program
     {
         Console.WriteLine("Hello, World!");
 
-        List<Wagon> list = new List<Wagon>();
-        list.Add(new Wagon(false));//1
-        list.Add(new Wagon(true));//2
-        list.Add(new Wagon(false));//3
-        list.Add(new Wagon(true));//4
-        list.Add(new Wagon(false));//5
-        list.Add(new Wagon(false));//6
-        list.Add(new Wagon(true));//7
-        list.Add(new Wagon(false));//8
-        list.Add(new Wagon(true));//9
-        list.Add(new Wagon(true));//10
-        list.Add(new Wagon(true));//11
-        list.Add(new Wagon(true));//12
+        List<Wagon> list = new List<Wagon>
+        {
+            new Wagon(false),//1
+            new Wagon(true),//2
+            new Wagon(false),//3
+            new Wagon(true),//4
+            new Wagon(false),//5
+            new Wagon(false),//6
+            new Wagon(true),//7
+            new Wagon(false),//8
+            new Wagon(true),//9
+            new Wagon(true),//10
+            new Wagon(true),//11
+            new Wagon(true)//12
+        };
 
-        var train = new Train(list);
+        var train = new Train(list,3);
 
         var r = new Researcher(train);
 
@@ -31,6 +33,6 @@ internal class Program
 
     public static void Print(string str)
     { 
-        System.Console.WriteLine(str); 
+        Console.WriteLine(str); 
     }
 }

@@ -69,12 +69,13 @@ namespace InfinityTrain
         //    Console.WriteLine(string.Join("", list.Select(x => x.ToString())));
         //}
 
-        //Сделал только для отображение позиции
+        //Сделал только для наглядного отображения позиции, В рамках ООП не рекомендуется
         public string GetMapPosition()
         {
-            return string.Format(new String('-', list.Count - (list.Count - _position)) + "@" + new String('-', list.Count - _position - 1) +
-                Environment.NewLine +
-                string.Join("", list.Select(x => x.ToString())));            
+            //return string.Format(new String('-', list.Count - (list.Count - _position)) + "@" + new String('-', list.Count - _position - 1) +
+            //    Environment.NewLine +
+            //    string.Join("", list.Select(x => x.ToString())));
+            return "";
         }
     }
 }
